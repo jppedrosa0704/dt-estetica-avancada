@@ -56,8 +56,8 @@ body {
 
 .logo img {
   /* altura e largura estava a 60px */
-  height: 106px;
-  width: 106px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -95,7 +95,10 @@ body {
   align-items: center;
   padding: 0 8%;
   background: #FAF6F2;
+  /* background: #f0d8b1; */
   overflow: hidden;
+  
+  
 }
 
 /* Logo como background suave */
