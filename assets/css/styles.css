@@ -30,15 +30,20 @@ body {
 
 /* Topbar */
 .topbar {
+  height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 8%;
-  background: rgba(255, 255, 255, 0.85);
+  /* padding: 0 8%; */
+  /* background: rgba(255, 255, 255, 0.85); */
+  /* background: rgba(255, 255, 255); */
+  background: #D8BFAE; /* rosé */;
+  color: #D8BFAE;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(216, 191, 174, 0.45);
+  /* backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(216, 191, 174, 0.45); */
   z-index: 999; /* FIXA DE VERDADE */
 }
 
@@ -50,8 +55,9 @@ body {
 }
 
 .logo img {
-  height: 60px;
-  width: 60px;
+  /* altura e largura estava a 60px */
+  height: 106px;
+  width: 106px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -75,7 +81,10 @@ body {
 }
 
 .menu a:hover {
-  color: #D8BFAE; /* rosé */
+  /* color: #D8BFAE; rosé */
+  color: black;
+  font-weight: 600;
+  
 }
 
 /* Hero */
