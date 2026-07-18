@@ -470,6 +470,31 @@ body {
       background: #C6A667; /* dourado */
   }
 
+  /* ⭐ Bolinhas com sombra dourada ⭐ */
+  .sobre-indicadores .indicador {
+      width: 12px;
+      height: 12px;
+      background: #e8e0d4;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(198, 166, 103, 0.55); /* sombra dourada */
+      transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .sobre-indicadores .indicador.ativo {
+      background: #C6A667; /* dourado */
+      transform: scale(1.25); /* destaque suave */
+  }
+
+  /* ⭐ Animação suave na bolinha ativa ⭐ */
+  .sobre-indicadores .indicador.ativo {
+      animation: indicador-pulso 1.8s ease-in-out infinite;
+  }
+
+  @keyframes indicador-pulso {
+      0% { transform: scale(1.1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1.1); }
+  }
 
   .topbar {
     padding: 14px 6%;
