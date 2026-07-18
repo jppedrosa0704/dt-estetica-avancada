@@ -422,6 +422,8 @@ body {
   opacity: 1;
 }
 
+
+
 /* ANIMAÇÃO GLOBAL */
 @keyframes vibrar-suave {
   0% { transform: translateX(0); }
@@ -448,6 +450,26 @@ body {
 ============================ */
 
 @media (max-width: 899px) {
+  /* ⭐ Indicadores abaixo das fotos (mobile) ⭐ */
+  .sobre-indicadores {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+  }
+
+  .sobre-indicadores .indicador {
+      width: 10px;
+      height: 10px;
+      background: #d6c9b5; /* nude claro */
+      border-radius: 50%;
+      transition: background 0.3s ease;
+  }
+
+  .sobre-indicadores .indicador.ativo {
+      background: #C6A667; /* dourado */
+  }
+
 
   .topbar {
     padding: 14px 6%;
