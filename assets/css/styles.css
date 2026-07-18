@@ -381,7 +381,6 @@ body {
   background: #C9B19D;
 }
 
-/* BLOCO FINAL — sem duplicações */
 .categoria-content {
   display: none;
   margin-top: 20px;
@@ -450,6 +449,12 @@ body {
     min-height: 60vh;
     padding: 0 6%;
     text-align: center;
+  }
+
+  .hero::before {
+    background-size: 80%;
+    background-position: center 45%;
+    opacity: 0.18;
   }
 
   .heading-primary {
