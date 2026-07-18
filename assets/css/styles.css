@@ -161,6 +161,14 @@ body {
   animation: vibrar 0.35s ease-in-out infinite;
 }
 
+.btn-primary {
+  background: #D8BFAE;
+  color: #2B2B2B;
+  animation: vibrar-suave 0.55s ease-in-out infinite,
+            brilho-dourado 2.5s ease-in-out infinite,
+            pulso 2.8s ease-in-out infinite;
+}
+
 .btn-primary:hover {
   background: #C9B19D;
 }
@@ -429,11 +437,44 @@ body {
   100% { transform: translateX(0); }
 }
 
+/* Vibração suave */
+@keyframes vibrar-suave {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-1.5px); }
+  50% { transform: translateX(1.5px); }
+  75% { transform: translateX(-1.5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Brilho dourado */
+@keyframes brilho-dourado {
+  0% { box-shadow: 0 0 0px rgba(198, 166, 103, 0.0); }
+  50% { box-shadow: 0 0 18px rgba(198, 166, 103, 0.55); }
+  100% { box-shadow: 0 0 0px rgba(198, 166, 103, 0.0); }
+}
+
+/* Pulso */
+@keyframes pulso {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
 /* ============================
    MOBILE RESPONSIVO PROFISSIONAL
    ============================ */
 
 @media (max-width: 899px) {
+
+  /* Botão AGENDAR AVALIAÇÃO fixo no canto */
+  .btn-primary {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 9999;
+    padding: 14px 30px;
+    border-radius: 999px;
+  }
 
   .topbar {
     padding: 14px 6%;
@@ -559,3 +600,4 @@ body {
     padding: 20px 6%;
   }
 }
+
