@@ -154,15 +154,18 @@ body {
   text-transform: uppercase;
 }
 
+/* Botão AGENDAR AVALIAÇÃO — vibra sempre */
 .btn-primary {
   background: #D8BFAE;
   color: #2B2B2B;
+  animation: vibrar 0.35s ease-in-out infinite;
 }
 
 .btn-primary:hover {
   background: #C9B19D;
 }
 
+/* Botão secundário */
 .btn-secondary {
   border: 1px solid #D8BFAE;
   color: #C6A667;
@@ -417,7 +420,7 @@ body {
   opacity: 1;
 }
 
-/* ANIMAÇÃO (fora do media) */
+/* ANIMAÇÃO GLOBAL */
 @keyframes vibrar {
   0% { transform: translateX(0); }
   25% { transform: translateX(-2px); }
@@ -431,11 +434,6 @@ body {
    ============================ */
 
 @media (max-width: 899px) {
-
-  /* botão VER TRATAMENTOS vibrando só no mobile */
-  .btn-highlight {
-    animation: vibrar 0.35s ease-in-out infinite;
-  }
 
   .topbar {
     padding: 14px 6%;
