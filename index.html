@@ -4,94 +4,98 @@
   <meta charset="UTF-8">
   <title>DT Estética Avançada</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header class="topbar">
-    <div class="logo">
+    <a href="index.html" class="logo">
       <img src="./assets/img/logo-dt1.png" alt="Logo DT Estética Avançada">
       <span class="brand-name">DT Estética Avançada</span>
-    </div>
+    </a>
 
     <nav class="menu">
       <a href="#sobre">Sobre</a>
-      <a href="#tratamentos">Tratamentos</a>
+      <a href="tratamentos.html">Tratamentos</a>
       <a href="#resultados">Resultados</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Luxo, tecnologia e resultados em estética avançada.</h1>
+      <h1 class="heading-primary">Luxo, tecnologia e resultados em estética avançada.</h1>
       <p>Protocolos exclusivos, ambiente sofisticado e cuidado personalizado para realçar a sua melhor versão.</p>
+
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Agendar avaliação</a>
-        <a href="#tratamentos" class="btn-secondary">Ver tratamentos</a>
+        <a href="tratamentos.html" class="btn-secondary">Ver tratamentos</a>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE A CLÍNICA (NOVA VERSÃO) -->
+  <!-- SOBRE -->
   <section id="sobre" class="sobre-section">
     <div class="sobre-container">
 
-      <!-- FOTO DA PROFISSIONAL -->
-      <div class="sobre-foto">
-        <img src="./assets/img/profissional.jpeg" alt="Profissional DT Estética Avançada">
-      </div>
+      <h2 class="heading-primary">Elegância, tecnologia e cuidado em cada detalhe</h2>
 
-      <!-- TEXTO SOBRE A CLÍNICA -->
-      <div class="sobre-texto">
-        <h2 class="sobre-titulo">Sobre a DT Estética Avançada</h2>
+      <p>
+        Mais do que uma clínica de estética, um conceito onde encontra tudo num só lugar.
+        Na DT Estética Avançada, reunimos beleza, bem-estar e tecnologia para oferecer um acompanhamento completo,
+        sempre focado em resultados reais e na transformação de cada cliente.
+      </p>
 
-        <p>
-          A DT Estética Avançada nasceu com o propósito de unir tecnologia, cuidado humano e resultados naturais.
-          Cada atendimento é pensado para valorizar a beleza individual, com protocolos exclusivos e ambiente acolhedor.
-        </p>
+      <p>
+        Cada protocolo é personalizado, porque acreditamos que cada pessoa é única. O nosso compromisso é proporcionar
+        resultados visíveis, segurança, inovação e um atendimento de excelência, para que encontre tudo o que precisa
+        num só lugar.
+      </p>
 
-        <p>
-          Com formação especializada em estética avançada e micropigmentação estética e paramédica,
-          oferecemos tratamentos modernos, seguros e personalizados — sempre com foco em elegância,
-          bem-estar e autoestima.
-        </p>
-
-        <ul class="sobre-lista">
-          <li>Atendimento humano e personalizado</li>
-          <li>Técnicas avançadas e resultados naturais</li>
-          <li>Ambiente sofisticado e confortável</li>
-        </ul>
-
-        <div class="sobre-info">
-          <p><strong>📍 Endereço:</strong> Lgo de Soares dos Reis 38</p>
-          <p><strong>📞 Contato:</strong> +351 912 529 900</p>
-          <p><strong>📧 Email:</strong> esteticaavancada.dt@gmail.com</p>
+      <!-- FOTOS LADO A LADO -->
+      <div class="sobre-fotos">
+        <div class="sobre-foto-item">
+          <img src="./assets/img/profissional.jpeg" alt="Profissional DT Estética Avançada">
         </div>
 
+        <div class="sobre-foto-item">
+          <img src="./assets/img/recepcao1.jpeg" alt="Recepção DT Estética Avançada">
+        </div>
+
+        <div class="sobre-foto-item">
+          <img src="./assets/img/recepcao2.jpeg" alt="Ambiente da clínica DT Estética Avançada">
+        </div>
       </div>
+
+      <div class="sobre-info">
+        <p><strong>📍 Endereço:</strong> Lgo de Soares dos Reis 38, 4400-309 — Vila Nova de Gaia</p>
+        <p><strong>📞 Contato:</strong> +351 912 529 900</p>
+        <p><strong>📧 Email:</strong> esteticaavancada.dt@gmail.com</p>
+      </div>
+
     </div>
   </section>
 
+  <!-- TRATAMENTOS (HOME SIMPLIFICADA) -->
   <section id="tratamentos" class="section section-dark">
-    <div class="section-title">Tratamentos</div>
-    <div class="cards">
-      <div class="card">
-        <h3>Harmonização facial</h3>
-        <p>Realce dos traços naturais com técnicas avançadas e foco em equilíbrio e elegância.</p>
-      </div>
-      <div class="card">
-        <h3>Bioestimuladores</h3>
-        <p>Estimulação de colagénio para firmeza, textura e rejuvenescimento da pele.</p>
-      </div>
-      <div class="card">
-        <h3>Corpo & contorno</h3>
-        <p>Protocolos combinados para definição, redução de medidas e melhora da pele.</p>
-      </div>
-    </div>
+    <h2 class="section-title">Tratamentos</h2>
+    <p class="section-text">
+      Conheça os nossos protocolos exclusivos de estética avançada.
+    </p>
+    <br>
+    <a href="tratamentos.html" class="btn-primary">Ver todos os tratamentos</a>
   </section>
 
+  <!-- RESULTADOS -->
   <section id="resultados" class="section">
     <div class="section-title">Antes e depois</div>
     <p class="section-text">
@@ -99,17 +103,21 @@
     </p>
   </section>
 
+  <!-- CONTATO -->
   <section id="contato" class="section section-dark">
     <div class="section-title">Contato & agendamento</div>
     <p class="section-text">
       Agende a sua avaliação pelo WhatsApp ou preencha o formulário abaixo.
     </p>
+
     <br>
     <a href="https://wa.me/351912529900" class="btn-primary">Agendar pelo WhatsApp</a>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© Dt Estética Avançada — Todos os direitos reservados.</p>
+    <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>
