@@ -466,16 +466,6 @@ body {
 
 @media (max-width: 899px) {
 
-  /* Botão AGENDAR AVALIAÇÃO fixo no canto */
-  .btn-primary {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    z-index: 9999;
-    padding: 14px 30px;
-    border-radius: 999px;
-  }
-
   .topbar {
     padding: 14px 6%;
     height: auto;
