@@ -118,6 +118,13 @@
   <footer class="footer">
     <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
 
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
