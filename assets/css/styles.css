@@ -538,14 +538,38 @@ body {
     padding: 50px 6%;
   }
 
+  /* ⭐ CARROSSEL FUNCIONANDO ⭐ */
   .sobre-fotos {
-    flex-direction: column;
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+
+  .sobre-fotos::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .sobre-fotos::-webkit-scrollbar-thumb {
+    background: #C6A667;
+    border-radius: 10px;
+  }
+
+  .sobre-foto-item {
+    min-width: 80%;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
   }
 
   .sobre-foto-item img {
-    height: 380px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
   }
+
+  /* ⭐ FIM DO CARROSSEL ⭐ */
 
   .sobre-texto p {
     font-size: 1rem;
@@ -590,4 +614,5 @@ body {
     padding: 20px 6%;
   }
 }
+
 
