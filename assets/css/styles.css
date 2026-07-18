@@ -7,14 +7,14 @@
 /* Fundo geral */
 body {
   font-family: 'Lato', sans-serif;
-  background: #FAF6F2; /* nude claro */
-  color: #2B2B2B; /* preto suave */
+  background: #FAF6F2;
+  color: #2B2B2B;
 }
 
 /* Nome da marca */
 .brand-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #857650;
   letter-spacing: 0.5px;
@@ -53,19 +53,12 @@ body {
   align-items: center;
   padding: 18px 8%;
   background: #D8BFAE;
-  color: #D8BFAE;
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
-/* Logo + Nome */
-/* .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-} */
+/* Logo */
 .logo {
   text-decoration: none;
   display: flex;
@@ -90,15 +83,25 @@ body {
   margin-left: 24px;
   text-decoration: none;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
   color: #2B2B2B;
 }
 
 .menu a:hover {
   color: #C6A667;
-  font-weight: 800;
+  font-weight: 600;
+}
+
+.menu a.active {
+  color: #C6A667 !important;
+  font-weight: 700;
+}
+
+.menu a.active:hover {
+  color: #C6A667;
+  font-weight: 700;
 }
 
 /* Hero */
@@ -154,7 +157,6 @@ body {
 .btn-primary {
   background: #D8BFAE;
   color: #2B2B2B;
-  border: none;
 }
 
 .btn-primary:hover {
@@ -230,7 +232,7 @@ body {
   border-top: 1px solid rgba(216, 191, 174, 0.45);
 }
 
-/* SOBRE A CLÍNICA */
+/* SOBRE */
 .sobre-section {
   padding: 80px 8%;
   background: #FFFFFF;
@@ -242,7 +244,6 @@ body {
   gap: 40px;
 }
 
-/* FOTOS DO SOBRE – LADO A LADO */
 .sobre-fotos {
   display: flex;
   gap: 30px;
@@ -265,7 +266,6 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Texto do Sobre */
 .sobre-texto {
   max-width: 700px;
 }
@@ -284,11 +284,6 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(216, 191, 174, 0.45);
 }
-
-.color-estetica {
-  color: goldenrod;
-}
-
 
 /* ===== CARDS DE TRATAMENTOS ===== */
 
@@ -346,7 +341,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* ===== CATEGORIAS DE TRATAMENTOS ===== */
+/* ===== CATEGORIAS ===== */
 
 .categoria {
   margin-bottom: 40px;
@@ -386,11 +381,7 @@ body {
   background: #C9B19D;
 }
 
-.categoria-content {
-  display: none;
-  margin-top: 20px;
-}
-
+/* BLOCO FINAL — sem duplicações */
 .categoria-content {
   display: none;
   margin-top: 20px;
@@ -402,6 +393,131 @@ body {
 
 .categoria-content.aberta {
   display: block;
-  max-height: 1000px; /* suficiente para caber os cards */
+  max-height: 1000px;
   opacity: 1;
+}
+
+/* ============================
+   MOBILE RESPONSIVO PROFISSIONAL
+   ============================ */
+
+@media (max-width: 899px) {
+
+  .topbar {
+    padding: 14px 6%;
+    height: auto;
+  }
+
+  .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #F2ECE7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    margin-left: 0;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2B2B2B;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 0 6%;
+    text-align: center;
+  }
+
+  .heading-primary {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sobre-section {
+    padding: 50px 6%;
+  }
+
+  .sobre-fotos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sobre-foto-item img {
+    height: 380px;
+  }
+
+  .sobre-texto p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .tratamento-card {
+    padding: 18px;
+  }
+
+  .card-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .categoria-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .categoria-toggle {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .section {
+    padding: 50px 6%;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-text {
+    font-size: 0.95rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    padding: 20px 6%;
+  }
 }
