@@ -165,11 +165,32 @@ body {
 
 .btn-secondary {
   border: 1px solid #D8BFAE;
-  color: #D8BFAE;
+  color: #C6A667;
 }
 
 .btn-secondary:hover {
   background: rgba(216, 191, 174, 0.15);
+}
+
+/* Botão VER TRATAMENTOS destacado */
+.btn-highlight {
+  background: #C6A667;
+  color: #FFF;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(198, 166, 103, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-highlight:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(198, 166, 103, 0.55);
 }
 
 /* Seções */
@@ -396,11 +417,25 @@ body {
   opacity: 1;
 }
 
+/* ANIMAÇÃO (fora do media) */
+@keyframes vibrar {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
 /* ============================
    MOBILE RESPONSIVO PROFISSIONAL
    ============================ */
 
 @media (max-width: 899px) {
+
+  /* botão VER TRATAMENTOS vibrando só no mobile */
+  .btn-highlight {
+    animation: vibrar 0.35s ease-in-out infinite;
+  }
 
   .topbar {
     padding: 14px 6%;
