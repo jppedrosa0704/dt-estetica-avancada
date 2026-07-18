@@ -158,12 +158,6 @@ body {
 .btn-primary {
   background: #D8BFAE;
   color: #2B2B2B;
-  animation: vibrar 0.35s ease-in-out infinite;
-}
-
-.btn-primary {
-  background: #D8BFAE;
-  color: #2B2B2B;
   animation: vibrar-suave 0.55s ease-in-out infinite,
             brilho-dourado 2.5s ease-in-out infinite,
             pulso 2.8s ease-in-out infinite;
@@ -281,7 +275,7 @@ body {
   gap: 30px;
   margin-top: 40px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* será desativado no mobile */
 }
 
 .sobre-foto-item {
@@ -429,15 +423,6 @@ body {
 }
 
 /* ANIMAÇÃO GLOBAL */
-@keyframes vibrar {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  75% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
-}
-
-/* Vibração suave */
 @keyframes vibrar-suave {
   0% { transform: translateX(0); }
   25% { transform: translateX(-1.5px); }
@@ -446,14 +431,12 @@ body {
   100% { transform: translateX(0); }
 }
 
-/* Brilho dourado */
 @keyframes brilho-dourado {
   0% { box-shadow: 0 0 0px rgba(198, 166, 103, 0.0); }
   50% { box-shadow: 0 0 18px rgba(198, 166, 103, 0.55); }
   100% { box-shadow: 0 0 0px rgba(198, 166, 103, 0.0); }
 }
 
-/* Pulso */
 @keyframes pulso {
   0% { transform: scale(1); }
   50% { transform: scale(1.06); }
@@ -461,8 +444,8 @@ body {
 }
 
 /* ============================
-   MOBILE RESPONSIVO PROFISSIONAL
-   ============================ */
+  MOBILE RESPONSIVO PROFISSIONAL
+============================ */
 
 @media (max-width: 899px) {
 
@@ -542,10 +525,12 @@ body {
   .sobre-fotos {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap; /* ESSENCIAL */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 16px;
     padding-bottom: 10px;
+    justify-content: flex-start;
   }
 
   .sobre-fotos::-webkit-scrollbar {
@@ -568,7 +553,6 @@ body {
     object-fit: cover;
     border-radius: 16px;
   }
-
   /* ⭐ FIM DO CARROSSEL ⭐ */
 
   .sobre-texto p {
@@ -614,5 +598,3 @@ body {
     padding: 20px 6%;
   }
 }
-
-
