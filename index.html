@@ -38,7 +38,7 @@
 
       <div class="hero-actions">
         <a href="#contato" class="btn-primary">Agendar avaliação</a>
-        <a href="tratamentos.html" class="btn-secondary">Ver tratamentos</a>
+        <a href="tratamentos.html" class="btn-highlight">Ver tratamentos</a>
       </div>
     </div>
   </section>
@@ -118,13 +118,18 @@
   <footer class="footer">
     <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
+
+  <!-- SCRIPT MENU MOBILE -->
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+      });
+    }
   </script>
+
 </body>
 </html>
