@@ -275,7 +275,7 @@ body {
   gap: 30px;
   margin-top: 40px;
   justify-content: center;
-  flex-wrap: wrap; /* será desativado no mobile */
+  flex-wrap: wrap;
 }
 
 .sobre-foto-item {
@@ -521,18 +521,19 @@ body {
     padding: 50px 6%;
   }
 
-  /* ⭐ CARROSSEL FUNCIONANDO ⭐ */
+  /* ⭐ UMA FOTO POR VEZ + SCROLL HORIZONTAL + ESPAÇO ENTRE FOTOS ⭐ */
   .sobre-fotos {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; /* ESSENCIAL */
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 16px;
+    gap: 20px; /* espaço entre fotos */
     padding-bottom: 10px;
     justify-content: flex-start;
   }
 
+  /* ⭐ Scroll dourado */
   .sobre-fotos::-webkit-scrollbar {
     height: 6px;
   }
@@ -542,18 +543,22 @@ body {
     border-radius: 10px;
   }
 
+  /* ⭐ Cada foto ocupa 100% da largura */
   .sobre-foto-item {
-    min-width: 80%;
-    flex: 0 0 auto;
+    min-width: 100%;
+    flex: 0 0 100%;
     scroll-snap-align: center;
   }
 
+  /* ⭐ Todas as fotos com a MESMA altura + primeira foto inteira */
   .sobre-foto-item img {
-    height: 300px;
+    width: 100%;
+    height: 630px;
     object-fit: cover;
+    object-position: top center; /* garante cabeça e pés */
     border-radius: 16px;
+    background: #FFFFFF;
   }
-  /* ⭐ FIM DO CARROSSEL ⭐ */
 
   .sobre-texto p {
     font-size: 1rem;
