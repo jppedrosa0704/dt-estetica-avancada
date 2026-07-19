@@ -248,6 +248,10 @@ body {
   color: #5A5A5A;
 }
 
+.categoria-header h3 {
+    font-size: 1.3rem !important; /* ajuste só para mobile */
+  }
+
 /* Rodapé */
 .footer {
   padding: 24px 8%;
