@@ -723,17 +723,37 @@ body {
         text-align: center;
     }
 
-    .menu-toggle {
+    /* .menu-toggle {
         display: block;
         font-size: 32px;
         background: none;
         border: none;
         cursor: pointer;
         color: #2B2B2B;
+        
+    } */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: #C6A667; /* DOURADO */
+      border-radius: 3px;
+      display: block;
+      transition: 0.3s ease;
     }
 
     .topbar {
-        padding: 1px 6%;
+        padding: 4px 6%;
         height: auto;
     }
 
