@@ -17,18 +17,23 @@
 
   <!-- HEADER -->
   <header class="topbar">
-    <a href="index.html" class="logo">
-      <img src="./assets/img/logo-dt1.png" alt="Logo DT Estética Avançada">
-      <span class="brand-name">DT Estética Avançada</span>
-    </a>
+      <a href="index.html" class="logo">
+        <img src="./assets/img/logo-dt1.png" alt="Logo DT Estética Avançada">
+        <span class="brand-name">DT Estética Avançada</span>
+      </a>
 
-    <nav class="menu">
-      <a href="#sobre">Sobre</a>
-      <a href="tratamentos.html">Tratamentos</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#contato">Contato</a>
-    </nav>
+      <!-- BOTÃO MOBILE -->
+      <button class="menu-toggle">☰</button>
+
+      <nav class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="tratamentos.html">Tratamentos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#contato">Contato</a>
+      </nav>
   </header>
+
+
 
   <!-- HERO -->
   <section class="hero">
@@ -156,5 +161,14 @@
     <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
 
+  <!-- SCRIPT MENU MOBILE -->
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+</script>
 </body>
 </html>

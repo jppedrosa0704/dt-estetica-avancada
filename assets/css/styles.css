@@ -667,3 +667,178 @@ body {
         font-size: 28px;
     }
 }
+
+/* CORREÇÃO FINAL — garante scroll no mobile */
+@media (max-width: 899px) {
+
+    /* ⭐ Scroll horizontal das fotos */
+    .sobre-fotos {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 20px !important;
+        padding-bottom: 10px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* ⭐ Barra dourada do scroll */
+    .sobre-fotos::-webkit-scrollbar {
+        height: 6px !important;
+    }
+
+    .sobre-fotos::-webkit-scrollbar-thumb {
+        background: #C6A667 !important;
+        border-radius: 10px !important;
+    }
+
+    /* ⭐ Cada foto ocupa a tela inteira */
+    .sobre-foto-item {
+        min-width: 100% !important;
+        flex: 0 0 100% !important;
+        scroll-snap-align: center !important;
+    }
+
+    /* ⭐ Bolinhas abaixo das fotos */
+    .sobre-indicadores {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-top: 12px !important;
+    }
+
+    .sobre-indicadores .indicador {
+        width: 12px !important;
+        height: 12px !important;
+        background: #e8e0d4 !important;
+        border-radius: 50% !important;
+        box-shadow: 0 0 6px rgba(198, 166, 103, 0.55) !important;
+        transition: background 0.3s ease, transform 0.3s ease !important;
+    }
+
+    .sobre-indicadores .indicador.ativo {
+        background: #C6A667 !important;
+        transform: scale(1.25) !important;
+        animation: indicador-pulso 1.8s ease-in-out infinite !important;
+    }
+
+    @keyframes indicador-pulso {
+        0% { transform: scale(1.1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1.1); }
+    }
+}
+
+/* ============================
+  RESTAURAÇÃO DA NAV ORIGINAL
+============================ */
+
+.topbar {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: #D8BFAE;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.25s ease;
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu a {
+  margin-left: 24px;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  color: #2B2B2B;
+}
+
+.menu a:hover {
+  color: #C6A667;
+  font-weight: 600;
+}
+
+.menu a.active {
+  color: #C6A667 !important;
+  font-weight: 700;
+}
+
+/* ESCONDE O BOTÃO NO DESKTOP */
+.menu-toggle {
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 899px) {
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #F2ECE7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    margin-left: 0;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2B2B2B;
+  }
+
+  .topbar {
+    padding: 14px 6%;
+    height: auto;
+  }
+
+  .logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+}
+
