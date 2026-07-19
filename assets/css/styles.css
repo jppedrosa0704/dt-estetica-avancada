@@ -637,7 +637,7 @@ body {
 }
 
 /* ============================
-   NAV — DESKTOP
+  NAV — DESKTOP
 ============================ */
 
 .topbar {
@@ -733,13 +733,13 @@ body {
     }
 
     .topbar {
-        padding: 14px 6%;
+        padding: 1px 6%;
         height: auto;
     }
 
     .logo img {
-        height: 90px !important;
-        width: 90px !important;
+        height: 65px !important;
+        width: 65px !important;
     }
 
     .brand-name {
