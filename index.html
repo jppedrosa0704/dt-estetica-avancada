@@ -102,6 +102,36 @@
     <a href="tratamentos.html" class="btn-primary">Ver todos os tratamentos</a>
   </section>
 
+  <!-- ⭐ BLOCO IGUAL AO PRINT ⭐ -->
+  <div class="bloco-reconhecimento">
+    
+    <div class="reconhecimento-imagem">
+        <img src="./assets/img/reconhecimento.avif" alt="Excelência Reconhecida">
+    </div>
+
+    <div class="reconhecimento-texto">
+        <h2>Excelência<br>Reconhecida</h2>
+
+        <div class="estrelas">★★★★★</div>
+
+        <p class="descricao">
+            "A verdadeira sofisticação é silenciosa, mas os nossos resultados ecoam.
+            A preferência indiscutível de uma comunidade exigente, solidificada por mais de 5.000 testemunhos de excelência."
+        </p>
+
+        <div class="dados">
+            <div class="relatos">
+                <strong>5.014+</strong><br>RELATOS DE EXCELÊNCIA
+            </div>
+
+            <div class="classificacao">
+                <strong>5.0/5</strong><br>CLASSIFICAÇÃO MÁXIMA
+            </div>
+        </div>
+    </div>
+
+  </div>
+
   <!-- RESULTADOS -->
   <section id="resultados" class="section">
     <div class="section-title">Antes e depois</div>
@@ -125,34 +155,6 @@
   <footer class="footer">
     <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
-
-  <!-- SCRIPT MENU MOBILE -->
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('open');
-      });
-    }
-  </script>
-
-<script>
-  const fotos = document.querySelector('.sobre-fotos');
-  const indicadores = document.querySelectorAll('.indicador');
-
-  fotos.addEventListener('scroll', () => {
-    const largura = fotos.clientWidth;
-    const scroll = fotos.scrollLeft;
-
-    const index = Math.round(scroll / largura);
-
-    indicadores.forEach((bolinha, i) => {
-      bolinha.classList.toggle('ativo', i === index);
-    });
-  });
-</script>
 
 </body>
 </html>

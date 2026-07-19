@@ -422,9 +422,130 @@ body {
   opacity: 1;
 }
 
+/* ===== TRATAMENTOS ===== */
 
+.tratamento-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(216, 191, 174, 0.45);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
 
-/* ANIMAÇÃO GLOBAL */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  color: #2B2B2B;
+}
+
+.card-toggle {
+  background: #D8BFAE;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #2B2B2B;
+}
+
+.card-content {
+  margin-top: 15px;
+  display: none;
+}
+
+.card-content p {
+  margin-bottom: 10px;
+  color: #5A5A5A;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.btn-agendar {
+  background: #C6A667;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* ===== CATEGORIAS ===== */
+
+.categoria {
+  margin-bottom: 40px;
+}
+
+.categoria-header {
+  background: #FFFFFF;
+  border: 1px solid rgba(216, 191, 174, 0.45);
+  padding: 18px 20px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.categoria-header h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #2B2B2B;
+}
+
+.categoria-toggle {
+  background: #D8BFAE;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #2B2B2B;
+  transition: 0.2s ease;
+}
+
+.categoria-toggle:hover {
+  background: #C9B19D;
+}
+
+.categoria-content {
+  display: none;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.categoria-content.aberta {
+  display: block;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+  padding: 24px 8%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6A6A6A;
+  background: #FAF6F2;
+  border-top: 1px solid rgba(216, 191, 174, 0.45);
+}
+
+/* ===== ANIMAÇÕES GLOBAIS ===== */
+
 @keyframes vibrar-suave {
   0% { transform: translateX(0); }
   25% { transform: translateX(-1.5px); }
@@ -446,207 +567,103 @@ body {
 }
 
 /* ============================
-  MOBILE RESPONSIVO PROFISSIONAL
+   BLOCO EXCELÊNCIA RECONHECIDA
+   (igual ao print original)
+============================ */
+
+.bloco-reconhecimento {
+    width: 100%;
+    background-color: #0c0c0c; /* fundo escuro igual ao print */
+    padding: 80px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.reconhecimento-imagem img {
+    width: 600px; /* tamanho igual ao print */
+    border-radius: 26px;
+    object-fit: cover;
+    display: block;
+}
+
+.reconhecimento-texto {
+    max-width: 480px;
+    color: #fff;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.reconhecimento-texto h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.estrelas {
+    font-size: 26px;
+    color: #d4af37; /* dourado */
+    margin-bottom: 20px;
+}
+
+.descricao {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.dados {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.dados strong {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.relatos,
+.classificacao {
+    font-size: 14px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+/* ============================
+  RESPONSIVO (MOBILE)
 ============================ */
 
 @media (max-width: 899px) {
-  /* ⭐ Indicadores abaixo das fotos (mobile) ⭐ */
-  .sobre-indicadores {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-  }
 
-  .sobre-indicadores .indicador {
-      width: 10px;
-      height: 10px;
-      background: #d6c9b5; /* nude claro */
-      border-radius: 50%;
-      transition: background 0.3s ease;
-  }
+    .bloco-reconhecimento {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 6%;
+        gap: 40px;
+    }
 
-  .sobre-indicadores .indicador.ativo {
-      background: #C6A667; /* dourado */
-  }
+    .reconhecimento-imagem img {
+        width: 100%;
+        max-width: 500px;
+    }
 
-  /* ⭐ Bolinhas com sombra dourada ⭐ */
-  .sobre-indicadores .indicador {
-      width: 12px;
-      height: 12px;
-      background: #e8e0d4;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba(198, 166, 103, 0.55); /* sombra dourada */
-      transition: background 0.3s ease, transform 0.3s ease;
-  }
+    .reconhecimento-texto h2 {
+        font-size: 36px;
+    }
 
-  .sobre-indicadores .indicador.ativo {
-      background: #C6A667; /* dourado */
-      transform: scale(1.25); /* destaque suave */
-  }
+    .descricao {
+        font-size: 16px;
+    }
 
-  /* ⭐ Animação suave na bolinha ativa ⭐ */
-  .sobre-indicadores .indicador.ativo {
-      animation: indicador-pulso 1.8s ease-in-out infinite;
-  }
+    .dados {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-  @keyframes indicador-pulso {
-      0% { transform: scale(1.1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1.1); }
-  }
-
-  .topbar {
-    padding: 14px 6%;
-    height: auto;
-  }
-
-  .logo img {
-    height: 60px;
-    width: 60px;
-  }
-
-  .brand-name {
-    font-size: 1.4rem;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #F2ECE7;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 10px;
-  }
-
-  .menu.open {
-    display: flex;
-  }
-
-  .menu a {
-    margin-left: 0;
-    padding: 12px 0;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 32px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #2B2B2B;
-  }
-
-  .hero {
-    min-height: 60vh;
-    padding: 0 6%;
-    text-align: center;
-  }
-
-  .hero::before {
-    background-size: 80%;
-    background-position: center 45%;
-    opacity: 0.18;
-  }
-
-  .heading-primary {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .sobre-section {
-    padding: 50px 6%;
-  }
-
-  /* ⭐ UMA FOTO POR VEZ + SCROLL HORIZONTAL + ESPAÇO ENTRE FOTOS ⭐ */
-  .sobre-fotos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px; /* espaço entre fotos */
-    padding-bottom: 10px;
-    justify-content: flex-start;
-  }
-
-  /* ⭐ Scroll dourado */
-  .sobre-fotos::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .sobre-fotos::-webkit-scrollbar-thumb {
-    background: #C6A667;
-    border-radius: 10px;
-  }
-
-  /* ⭐ Cada foto ocupa 100% da largura */
-  .sobre-foto-item {
-    min-width: 100%;
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-  }
-
-  /* ⭐ Todas as fotos com a MESMA altura + primeira foto inteira */
-  .sobre-foto-item img {
-    width: 100%;
-    height: 630px;
-    object-fit: cover;
-    object-position: top center; /* garante cabeça e pés */
-    border-radius: 16px;
-    background: #FFFFFF;
-  }
-
-  .sobre-texto p {
-    font-size: 1rem;
-    line-height: 1.55;
-  }
-
-  .tratamento-card {
-    padding: 18px;
-  }
-
-  .card-header h3 {
-    font-size: 1.3rem;
-  }
-
-  .card-content p {
-    font-size: 1rem;
-  }
-
-  .categoria-header h3 {
-    font-size: 1.4rem;
-  }
-
-  .categoria-toggle {
-    font-size: 0.85rem;
-    padding: 6px 14px;
-  }
-
-  .section {
-    padding: 50px 6%;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
-  }
-
-  .section-text {
-    font-size: 0.95rem;
-  }
-
-  .footer {
-    font-size: 0.8rem;
-    padding: 20px 6%;
-  }
+    .dados strong {
+        font-size: 28px;
+    }
 }
