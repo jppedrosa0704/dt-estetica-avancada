@@ -1,3 +1,7 @@
+:root {
+    --nav-height: 85px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -78,7 +82,7 @@ body {
   border-radius: 50%;
 }
 
-/* Menu */
+/* Menu
 .menu a {
   margin-left: 24px;
   text-decoration: none;
@@ -102,7 +106,7 @@ body {
 .menu a.active:hover {
   color: #C6A667;
   font-weight: 700;
-}
+} */
 
 /* Hero */
 .hero {
@@ -667,111 +671,145 @@ body {
   border-radius: 50%;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
+/* MENU DESKTOP */
+.menu-desktop {
+    display: flex;
+    gap: 32px;
+    align-items: center;
 }
 
-.menu a {
-  margin-left: 24px;
-  text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  color: #2B2B2B;
+.menu-desktop a {
+    margin-left: 24px;
+    text-decoration: none;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    color: #2B2B2B;
 }
 
-.menu a:hover {
-  color: #C6A667;
-  font-weight: 600;
+.menu-desktop a:hover {
+    color: #C6A667;
+    font-weight: 600;
 }
 
-.menu a.active {
-  color: #C6A667 !important;
-  font-weight: 700;
+.menu-desktop a.active {
+    color: #C6A667 !important;
+    font-weight: 700;
 }
 
-/* Botão escondido no desktop */
+/* Esconder menu mobile no desktop */
+.menu-mobile {
+    display: none;
+}
+
+/* Esconder hambúrguer no desktop */
 .menu-toggle {
     display: none;
 }
+
 
 /* ============================
   MOBILE — TODAS AS CORREÇÕES
 ============================ */
 @media (max-width: 899px) {
 
-    /* NAV MOBILE */
-    .menu {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #F2ECE7;
-      padding: 20px;
-      border-radius: 0 0 14px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      transform: translateY(-100%);
-      transition: transform 0.35s ease;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      z-index: 998;
+    /* RESET COMPLETO DA NAV NO MOBILE */
+    body {
+        padding-top: 65px !important; /* empurra o conteúdo para baixo da NAV fixa */
     }
 
-    .menu.open {
-        transform: translateY(85px); /* desce até logo abaixo da nav */
+    .topbar {
+        position: fixed !important;   /* fixa no topo SEMPRE */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 65px !important;      /* altura fixa */
+        padding: 0 6% !important;     /* remove padding vertical */
+        background: #D8BFAE !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 999;
+        --nav-height: 65px;           /* altura usada pelo menu */
     }
 
-    .menu a {
+    /* LINKS DO MENU MOBILE */
+    .menu-mobile a {
         font-size: 1.2rem;
         text-align: center;
         padding: 12px 0;
         color: #2B2B2B;
+        text-decoration: none;
+        transition: color 0.2s ease;
     }
 
-    /* .menu-toggle {
-        display: block;
-        font-size: 32px;
+    /* HOVER DOURADO NO MOBILE */
+    .menu-mobile a:hover {
+        color: #C6A667;
+        font-weight: 600;
+    }
+
+    /* NAV MOBILE */
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #F2ECE7;
+        padding: 20px;
+        border-radius: 0 0 14px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        transform: translateY(-100%);
+        transition: transform 0.35s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        z-index: 998;
+    }
+
+    .menu-mobile.open {
+        transform: translateY(var(--nav-height)); /* SEMPRE COLADO */
+    }
+
+    /* BOTÃO MOBILE */
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
         background: none;
         border: none;
         cursor: pointer;
-        color: #2B2B2B;
-        
-    } */
-    .menu-toggle {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 6px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0;
+        padding: 0;
+        height: 55px; /* garante alinhamento com o logo */
+        align-items: center;
     }
 
     .menu-toggle span {
         width: 28px;
         height: 3px;
-        background: #C6A667; /* dourado */
+        background: #C6A667;
         border-radius: 3px;
         display: block;
         transition: 0.3s ease;
     }
 
-    .topbar {
-        padding: 4px 6%;
-        height: auto;
+    /* ESCONDER MENU DESKTOP NO MOBILE */
+    .menu-desktop {
+        display: none !important;
     }
 
+    /* Logo ajustado */
     .logo img {
-        height: 65px !important;
-        width: 65px !important;
+        height: 55px !important;
+        width: 55px !important;
     }
 
+    /* Texto da marca ajustado */
     .brand-name {
-        font-size: 1.4rem;
+        font-size: 1.2rem !important;
+        line-height: 1 !important;
     }
 
     /* HERO MOBILE */
@@ -796,8 +834,8 @@ body {
     .hero-actions .btn-primary,
     .hero-actions .btn-highlight {
         background: transparent !important;
-        border: 1px solid #C6A667 !important; /* borda dourada elegante */
-        color: #C6A667 !important;            /* texto dourado */
+        border: 1px solid #C6A667 !important;
+        color: #C6A667 !important;
         width: 100% !important;
         padding: 14px 0 !important;
         font-size: 1rem !important;
@@ -808,13 +846,11 @@ body {
     .section .btn-highlight,
     .section .btn-secondary,
     .section .btn-primary {
-      font-size: 0.85rem !important;
-      padding: 12px 22px !important;
-      
-    
-}
+        font-size: 0.85rem !important;
+        padding: 12px 22px !important;
+    }
 
-    /* ⭐ Marca d'água maior no mobile */
+    /* Marca d'água maior no mobile */
     .hero::before {
         background-size: 80% !important;
         background-position: center 45% !important;
@@ -906,3 +942,17 @@ body {
         100% { transform: scale(1.1); }
     }
 }
+
+@media (max-width: 899px) {
+
+    /* Esconder menu desktop no mobile */
+    .menu-desktop {
+        display: none !important;
+    }
+
+    /* Mostrar hambúrguer no mobile */
+    .menu-toggle {
+        display: flex !important;
+    }
+}
+

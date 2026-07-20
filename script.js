@@ -1,22 +1,62 @@
 // MENU MOBILE
 const toggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
+const menuMobile = document.querySelector('.menu-mobile');
+const mobileLinks = document.querySelectorAll('.menu-mobile a');
 
-toggle.addEventListener('click', () => {
-  menu.classList.toggle('open');
+if (toggle && menuMobile) {
+  toggle.addEventListener('click', () => {
+    menuMobile.classList.toggle('open');
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuMobile.classList.remove('open');
+    });
+  });
+}
+
+// CATEGORIAS (Tratamentos)
+const categoriaToggles = document.querySelectorAll('.categoria-toggle');
+
+categoriaToggles.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.parentElement.nextElementSibling;
+    const aberta = content.classList.contains('aberta');
+
+    if (aberta) {
+      content.classList.remove('aberta');
+      btn.textContent = 'Ver serviços';
+    } else {
+      content.classList.add('aberta');
+      btn.textContent = 'Fechar';
+    }
+  });
 });
 
-// BOLINHAS DO SOBRE
+// CARDS (Tratamentos)
+const cardToggles = document.querySelectorAll('.card-toggle');
+
+cardToggles.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.parentElement.nextElementSibling;
+    const visivel = content.style.display === 'block';
+    content.style.display = visivel ? 'none' : 'block';
+  });
+});
+
+// BOLINHAS DO SLIDER (Sobre)
 const fotos = document.querySelector('.sobre-fotos');
 const indicadores = document.querySelectorAll('.indicador');
 
-fotos.addEventListener('scroll', () => {
-  const largura = fotos.clientWidth;
-  const scroll = fotos.scrollLeft;
+if (fotos && indicadores.length > 0) {
+  fotos.addEventListener('scroll', () => {
+    const largura = fotos.clientWidth;
+    const scroll = fotos.scrollLeft;
 
-  const index = Math.round(scroll / largura);
+    const index = Math.round(scroll / largura);
 
-  indicadores.forEach((bolinha, i) => {
-    bolinha.classList.toggle('ativo', i === index);
+    indicadores.forEach((bolinha, i) => {
+      bolinha.classList.toggle('ativo', i === index);
+    });
   });
-});
+}

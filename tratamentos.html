@@ -14,15 +14,27 @@
       <span class="brand-name">DT Estética Avançada</span>
     </a>
 
-    <nav class="menu">
-      <!-- <a href="index.html">Início</a> -->
+    <nav class="menu-desktop">
       <a href="index.html#sobre">Sobre</a>
       <a href="tratamentos.html" class="active">Tratamentos</a>
       <a href="index.html#resultados">Resultados</a>
       <a href="index.html#contato">Contato</a>
     </nav>
+
+    <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
   </header>
 
+  <!-- MENU MOBILE -->
+  <nav class="menu-mobile">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="tratamentos.html" class="active">Tratamentos</a>
+      <a href="index.html#resultados">Resultados</a>
+      <a href="index.html#contato">Contato</a>
+  </nav>
   <section id="tratamentos" class="section section-dark">
     <h2 class="section-title">Tratamentos</h2>
     <p class="section-text">
@@ -348,36 +360,6 @@
   <footer class="footer">
     <p>© DT Estética Avançada — Todos os direitos reservados.</p>
   </footer>
-
-  <!-- SCRIPT DAS CATEGORIAS + CARDS -->
-  <script>
-    const categoriaToggles = document.querySelectorAll('.categoria-toggle');
-
-    categoriaToggles.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.parentElement.nextElementSibling;
-        const aberta = content.classList.contains('aberta');
-
-        if (aberta) {
-          content.classList.remove('aberta');
-          btn.textContent = 'Ver serviços';
-        } else {
-          content.classList.add('aberta');
-          btn.textContent = 'Fechar';
-        }
-      });
-    });
-
-    const cardToggles = document.querySelectorAll('.card-toggle');
-
-    cardToggles.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.parentElement.nextElementSibling;
-        const visivel = content.style.display === 'block';
-        content.style.display = visivel ? 'none' : 'block';
-      });
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
