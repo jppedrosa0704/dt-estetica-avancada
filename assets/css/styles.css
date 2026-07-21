@@ -1037,6 +1037,7 @@ body {
   .categoria-header h3 {
     font-size: 1.1rem;
     line-height: 1.2;
+    text-align: left;
   }
 
   .categoria-toggle {
