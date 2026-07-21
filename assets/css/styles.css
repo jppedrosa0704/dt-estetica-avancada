@@ -1030,8 +1030,8 @@ body {
   }
 
   .categoria-header {
-    padding: 18px 7px;
-    gap: 12px;
+    padding: 28px 14px;   /* mais espaço vertical e horizontal */
+    gap: 16px;            /* espaçamento entre foto e texto */
   }
 
   .categoria-header h3 {
