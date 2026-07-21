@@ -1030,17 +1030,17 @@ body {
   }
 
   .categoria-header {
-    padding: 14px 16px;
+    padding: 18px 6px;
     gap: 12px;
   }
 
   .categoria-header h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.2;
   }
 
   .categoria-toggle {
-    padding: 8px 14px;
+    padding: 8px 18px;
     font-size: 0.85rem;
   }
 }
