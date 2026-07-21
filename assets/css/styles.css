@@ -956,3 +956,29 @@ body {
     }
 }
 
+/* ===== AJUSTE DE FUNDO DAS SUBCATEGORIAS ===== */
+
+.categoria-content {
+  background: #D8BFAE; /* mesma cor da NAV */
+  padding: 22px;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* ===== AJUSTE OPCIONAL (DEIXA OS CARDS MAIS BONITOS) ===== */
+
+.tratamento-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(216, 191, 174, 0.55); /* leve reforço no dourado */
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08); /* sombra mais elegante */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tratamento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}

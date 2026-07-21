@@ -33,14 +33,21 @@ categoriaToggles.forEach(btn => {
   });
 });
 
-// CARDS (Tratamentos)
+// CARDS (Tratamentos) — AGORA COM "VER MAIS" ↔ "FECHAR"
 const cardToggles = document.querySelectorAll('.card-toggle');
 
 cardToggles.forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.parentElement.nextElementSibling;
-    const visivel = content.style.display === 'block';
-    content.style.display = visivel ? 'none' : 'block';
+    const isOpen = content.style.display === 'block';
+
+    if (isOpen) {
+      content.style.display = 'none';
+      btn.textContent = 'Ver mais';
+    } else {
+      content.style.display = 'block';
+      btn.textContent = 'Fechar';
+    }
   });
 });
 
