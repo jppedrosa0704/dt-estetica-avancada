@@ -17,8 +17,8 @@ body {
 
 /* Nome da marca */
 .brand-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #857650;
   letter-spacing: 0.5px;
@@ -27,8 +27,8 @@ body {
 /* Títulos principais */
 .heading-primary {
   color: #C6A667;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 600;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
   font-size: 3.2rem;
   text-align: center;
 }
@@ -81,32 +81,6 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
-
-/* Menu
-.menu a {
-  margin-left: 24px;
-  text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  color: #2B2B2B;
-}
-
-.menu a:hover {
-  color: #C6A667;
-  font-weight: 600;
-}
-
-.menu a.active {
-  color: #C6A667 !important;
-  font-weight: 700;
-}
-
-.menu a.active:hover {
-  color: #C6A667;
-  font-weight: 700;
-} */
 
 /* Hero */
 .hero {
@@ -682,7 +656,7 @@ body {
     margin-left: 24px;
     text-decoration: none;
     font-family: "Playfair Display", serif;
-    font-size: 1.1rem;
+    font-size: 1.rem;
     font-weight: 500;
     transition: color 0.2s ease;
     color: #2B2B2B;
@@ -691,11 +665,13 @@ body {
 .menu-desktop a:hover {
     color: #C6A667;
     /* font-weight: 600; */
+    font-size: 1.15rem;
 }
 
 .menu-desktop a.active {
     color: #C6A667 !important;
     /* font-weight: 500; */
+    font-size: 1.15rem;
 }
 
 /* Esconder menu mobile no desktop */
@@ -982,3 +958,4 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+
