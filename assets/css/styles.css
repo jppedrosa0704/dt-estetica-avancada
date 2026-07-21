@@ -190,7 +190,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   margin-bottom: 18px;
-  color: #2B2B2B;
+  color: #C6A667;
 }
 
 .section-text {
@@ -1045,7 +1045,46 @@ body {
     font-size: 0.85rem;
   }
 
-  .section {
-    padding: 10px 1%;   /* aumenta espaço lateral */
-  }
+}
+
+@media (max-width: 768px) {
+
+    .categoria-toggle {
+        background-color: #d4a24c; /* dourado */
+        color: #ffffff;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;          /* ocupa toda a largura */
+        text-align: center;   /* centraliza o texto */
+        margin-top: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .categoria-toggle:hover {
+        background-color: #c08f3f;
+    }
+
+    /* Ajusta o layout para mobile */
+    .categoria-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .categoria-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .categoria-img {
+        width: 203px;
+        height: 183px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
 }
