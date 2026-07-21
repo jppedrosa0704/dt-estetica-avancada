@@ -1016,7 +1016,12 @@ body {
   background: #B89A5A;
 }
 
+
 @media (max-width: 899px) {
+  .subtexto {
+  font-size: medium;
+  font-style: italic;
+  }
 
   .categoria-img {
     width: 55px;
