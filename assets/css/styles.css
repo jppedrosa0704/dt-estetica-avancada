@@ -555,7 +555,7 @@ body {
 
 .bloco-reconhecimento {
     width: 100%;
-    background-color: #0c0c0c; /* fundo escuro igual ao print */
+    background-color: #FAF6F2; /* fundo escuro igual ao print */
     padding: 80px 8%;
     display: flex;
     justify-content: center;
@@ -572,7 +572,7 @@ body {
 
 .reconhecimento-texto {
     max-width: 480px;
-    color: #fff;
+    color: black;
     font-family: "Cormorant Garamond", serif;
 }
 
@@ -581,6 +581,7 @@ body {
     line-height: 1.1;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #C6A667;
 }
 
 .estrelas {
