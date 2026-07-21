@@ -19,7 +19,7 @@ body {
 .brand-name {
   font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 500;
   color: #857650;
   letter-spacing: 0.5px;
 }
@@ -681,7 +681,7 @@ body {
 .menu-desktop a {
     margin-left: 24px;
     text-decoration: none;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Playfair Display", serif;
     font-size: 1.1rem;
     font-weight: 500;
     transition: color 0.2s ease;
@@ -690,12 +690,12 @@ body {
 
 .menu-desktop a:hover {
     color: #C6A667;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .menu-desktop a.active {
     color: #C6A667 !important;
-    font-weight: 700;
+    /* font-weight: 500; */
 }
 
 /* Esconder menu mobile no desktop */
@@ -808,7 +808,7 @@ body {
 
     /* Texto da marca ajustado */
     .brand-name {
-        font-size: 1.2rem !important;
+        font-size: 1.5rem !important;
         line-height: 1 !important;
     }
 
