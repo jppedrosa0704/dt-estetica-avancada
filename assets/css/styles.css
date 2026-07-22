@@ -135,7 +135,7 @@ body {
 /* Botão AGENDAR AVALIAÇÃO — vibra sempre */
 .btn-primary {
   background: #C6A667;
-  color: #2B2B2B;
+  color: #FFF;
   animation: vibrar-suave 0.55s ease-in-out infinite,
             brilho-dourado 2.5s ease-in-out infinite,
             pulso 2.8s ease-in-out infinite;
@@ -144,6 +144,7 @@ body {
 .btn-primary:hover {
   background: #C9B19D;
 }
+
 
 /* Botão secundário */
 .btn-secondary {
@@ -1126,3 +1127,5 @@ body {
   50% { transform: scale(1.04); }
   100% { transform: scale(1); }
 }
+
+
