@@ -169,6 +169,25 @@ body {
   box-shadow: 0 4px 12px rgba(198, 166, 103, 0.45);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: pulso-highlight 2.6s ease-in-out infinite;
+}
+
+.btn-highlight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.55),
+    transparent
+  );
+  animation: brilho-dourado-highlight 2.8s ease-in-out infinite;
 }
 
 .btn-highlight:hover {
@@ -829,7 +848,7 @@ body {
 
     /* Marca d'água maior no mobile */
     .hero::before {
-        background-size: 80% !important;
+        background-size: 60% !important;
         background-position: center 45% !important;
         opacity: 0.18 !important;
     }
@@ -1087,4 +1106,18 @@ body {
         object-fit: cover;
         border-radius: 12px;
     }
+}
+
+/* ===== ANIMAÇÃO DO BOTÃO HIGHLIGHT ===== */
+
+@keyframes brilho-dourado-highlight {
+  0% { opacity: 0; transform: translateX(-120%); }
+  50% { opacity: 0.8; transform: translateX(0%); }
+  100% { opacity: 0; transform: translateX(120%); }
+}
+
+@keyframes pulso-highlight {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
 }
