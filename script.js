@@ -43,7 +43,7 @@ cardToggles.forEach(btn => {
 
     if (isOpen) {
       content.style.display = 'none';
-      btn.textContent = 'Ver mais';
+      btn.textContent = 'Abrir';
     } else {
       content.style.display = 'block';
       btn.textContent = 'Fechar';
