@@ -197,7 +197,7 @@ body {
 
 /* Seções */
 .section {
-  padding: 60px 5%;
+  padding: 60px 10%;
   background: #FFFFFF;
 }
 
@@ -448,7 +448,7 @@ body {
 }
 
 .card-toggle {
-  background: #D8BFAE;
+  background: #C6A667;
   border: none;
   padding: 8px 16px;
   border-radius: 999px;
@@ -1106,6 +1106,11 @@ body {
         object-fit: cover;
         border-radius: 12px;
     }
+
+    .section {
+      padding: 60px 5%;
+      
+}
 }
 
 /* ===== ANIMAÇÃO DO BOTÃO HIGHLIGHT ===== */
