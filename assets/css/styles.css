@@ -337,7 +337,7 @@ body {
 }
 
 .card-toggle {
-  background: #D8BFAE;
+  background: #C6A667;
   border: none;
   padding: 8px 16px;
   border-radius: 999px;
@@ -942,7 +942,7 @@ body {
 /* ===== AJUSTE DE FUNDO DAS SUBCATEGORIAS ===== */
 
 .categoria-content {
-  background: #D8BFAE;
+  /* background: #D8BFAE; */
   padding: 22px;
   border-radius: 14px;
   margin-top: 20px;
@@ -1069,14 +1069,14 @@ body {
 @media (max-width: 768px) {
 
     .categoria-toggle {
-        background-color: #d4a24c; /* dourado */
+        background-color: #C6A667; /* dourado */
         color: #ffffff;
         padding: 12px 28px;
         border: none;
         border-radius: 25px;
         font-size: 16px;
         font-weight: 600;
-        width: 100%;          /* ocupa toda a largura */
+        width: 50%;          /* ocupa toda a largura */
         text-align: center;   /* centraliza o texto */
         margin-top: 10px;
         cursor: pointer;
