@@ -67,3 +67,49 @@ if (fotos && indicadores.length > 0) {
     });
   });
 }
+
+/* ============================
+  SCROLL SUAVE PARA LINKS
+============================ */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const alvo = document.querySelector(this.getAttribute('href'));
+
+    if (!alvo) return;
+
+    // Altura da NAV (desktop e mobile)
+    const navHeight = window.innerWidth < 899 ? 65 : 85;
+
+    const posicao = alvo.offsetTop - navHeight;
+
+    window.scrollTo({
+      top: posicao,
+      behavior: 'smooth'
+    });
+  });
+});
+
+/* ============================
+  SCROLL SUAVE AO CARREGAR
+============================ */
+
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+
+    if (hash) {
+        const alvo = document.querySelector(hash);
+
+        if (alvo) {
+            const navHeight = window.innerWidth < 899 ? 65 : 85;
+            const posicao = alvo.offsetTop - navHeight;
+
+            window.scrollTo({
+                top: posicao,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
