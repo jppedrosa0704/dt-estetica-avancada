@@ -26,14 +26,16 @@ categoriaToggles.forEach(btn => {
     if (aberta) {
       content.classList.remove('aberta');
       btn.textContent = 'Ver serviços';
+      btn.dataset.aberto = "false";
     } else {
       content.classList.add('aberta');
       btn.textContent = 'Fechar';
+      btn.dataset.aberto = "true";
     }
   });
 });
 
-// CARDS (Tratamentos) — AGORA COM "VER MAIS" ↔ "FECHAR"
+// CARDS (Tratamentos) — "VER MAIS" ↔ "FECHAR"
 const cardToggles = document.querySelectorAll('.card-toggle');
 
 cardToggles.forEach(btn => {
@@ -80,9 +82,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     if (!alvo) return;
 
-    // Altura da NAV (desktop e mobile)
     const navHeight = window.innerWidth < 899 ? 65 : 85;
-
     const posicao = alvo.offsetTop - navHeight;
 
     window.scrollTo({
@@ -113,3 +113,50 @@ window.addEventListener('load', () => {
         }
     }
 });
+
+/* ============================
+  ABRIR AUTOMATICAMENTE A CATEGORIA PELO HASH (#)
+============================ */
+
+window.addEventListener('load', () => {
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash) {
+        const categoriaTitulo = document.querySelector(`h3[id="${hash}"]`);
+
+        if (categoriaTitulo) {
+            const categoria = categoriaTitulo.closest(".categoria");
+            const content = categoria.querySelector(".categoria-content");
+            const btn = categoria.querySelector(".categoria-toggle");
+
+            // Abre automaticamente
+            content.classList.add("aberta");
+
+            // Atualiza o texto do botão
+            btn.textContent = "Fechar";
+
+            // Marca o botão como já aberto
+            btn.dataset.aberto = "true";
+        }
+    }
+});
+
+/* ============================
+  BOLINHAS DO CARROSSEL (Categorias)
+============================ */
+
+const categoriasCarousel = document.querySelector('.tratamentos-home-grid');
+const indicadoresTrat = document.querySelectorAll('.indicador-trat');
+
+if (categoriasCarousel && indicadoresTrat.length > 0) {
+  categoriasCarousel.addEventListener('scroll', () => {
+    const largura = categoriasCarousel.clientWidth;
+    const scroll = categoriasCarousel.scrollLeft;
+
+    const index = Math.round(scroll / largura);
+
+    indicadoresTrat.forEach((bolinha, i) => {
+      bolinha.classList.toggle('ativo', i === index);
+    });
+  });
+}
