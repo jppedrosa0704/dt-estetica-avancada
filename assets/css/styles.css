@@ -1447,3 +1447,45 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    .categoria-home {
+        min-height: 620px; /* altura igual para todos os cards */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 20px;
+    }
+
+    .categoria-home-img {
+        height: 280px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 18px;
+    }
+
+    .categoria-home-titulo {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .categoria-home-descricao {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* limita o texto */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .categoria-home-btn {
+        width: 70%;
+        margin: 0 auto;
+        padding: 12px 26px;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+}
