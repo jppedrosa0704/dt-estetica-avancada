@@ -596,7 +596,7 @@ body {
 }
 
 .reconhecimento-imagem img {
-    width: 600px; /* tamanho igual ao print */
+    width: 700px; /* tamanho da imagem */
     border-radius: 26px;
     object-fit: cover;
     display: block;
@@ -1224,7 +1224,7 @@ body {
 
 
 /* ============================
-   CARROSSEL DE CATEGORIAS — MOBILE
+  CARROSSEL DE CATEGORIAS — MOBILE
 ============================ */
 @media (max-width: 768px) {
 
@@ -1249,15 +1249,55 @@ body {
         border-radius: 10px;
     }
 
-    /* cada card ocupa a tela inteira */
+    /* cada card ocupa a tela inteira + altura fixa */
     .categoria-home {
         min-width: 100% !important;
         scroll-snap-align: center !important;
+
+        /* altura fixa e layout simétrico */
+        min-height: 680px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    /* mantém a foto no tamanho original */
+    .categoria-home-img {
+        height: 350px !important;
+        object-fit: cover !important;
+    }
+
+    /* texto limitado para não estourar o card */
+    .categoria-home-descricao {
+        display: -webkit-box !important;
+        -webkit-line-clamp: 5 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* BOTÃO IGUAL AO DESKTOP */
+    .categoria-home-btn {
+        background: #C6A667 !important;
+        color: #FFF !important;
+        border: none !important;
+        padding: 10px 20px !important;
+        border-radius: 999px !important;
+        font-size: 0.85rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 12px rgba(198, 166, 103, 0.45) !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+        text-decoration: none !important;
+
+        width: auto !important;      /* remove largura 100% */
+        margin-top: auto !important; /* fixa no fundo */
+        align-self: center !important; /* centraliza */
     }
 }
 
 /* ============================
-   BOLINHAS DO CARROSSEL
+  BOLINHAS DO CARROSSEL
 ============================ */
 @media (max-width: 768px) {
 
@@ -1289,4 +1329,121 @@ body {
         100% { transform: scale(1.1); }
     }
 }
+
+
+/* ============================
+  SUBCATEGORIAS — DESKTOP PREMIUM
+=============================== */
+@media (min-width: 1025px) {
+
+    /* bloco principal da subcategoria */
+    .categoria {
+        max-width: 900px;        /* impede esticar */
+        margin: 0 auto 40px auto; /* centraliza */
+        padding: 28px 32px;      /* deixa mais elegante */
+        border-radius: 18px;
+    }
+
+    /* cabeçalho da subcategoria */
+    .categoria-header {
+        padding: 26px 32px;
+        border-radius: 16px;
+    }
+
+    /* conteúdo interno */
+    .categoria-content {
+        padding: 26px 32px;
+        border-radius: 16px;
+    }
+
+    /* imagem da subcategoria (se existir) */
+    .categoria-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 16px;
+        object-fit: cover;
+    }
+
+    /* título */
+    .categoria-header h3 {
+        font-size: 1.8rem;
+    }
+
+    /* botão */
+    .categoria-toggle {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== GRID COMPACTO PARA DESKTOP ===== */
+.tratamentos-home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== CARD COMPACTO ===== */
+.categoria-home {
+    background: #F3E8D9;
+    padding: 26px 22px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+
+    /* deixa o card em coluna e permite empurrar o botão */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== FOTO PADRONIZADA ===== */
+.categoria-home-img {
+    width: 100%;
+    max-width: 240px;
+    height: 350px; /* altura fixa para todas */
+    border-radius: 14px;
+    object-fit: cover;
+    margin: 0 auto 16px auto;
+    display: block;
+}
+
+/* ===== TÍTULO MENOR ===== */
+.categoria-home-titulo {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* ===== DESCRIÇÃO MENOR ===== */
+.categoria-home-descricao {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
+
+/* ===== BOTÃO FIXO NO FUNDO DO CARD ===== */
+.categoria-home-btn {
+    margin-top: auto;          /* empurra o botão para o fundo */
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    align-self: center;        /* mantém centralizado */
+}
+
+.categoria-home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.categoria-home-descricao {
+    flex-grow: 1;
+}
+
+.categoria-home-btn {
+    margin-top: auto;
+}
+
 
