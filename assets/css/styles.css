@@ -1207,6 +1207,7 @@ body {
 .categoria-home-titulo {
     font-size: 1.4rem; /* antes 1.8rem */
     margin-bottom: 10px;
+    color: #C6A667;
 }
 
 /* ===== DESCRIÇÃO MENOR ===== */
@@ -1470,6 +1471,7 @@ body {
         font-size: 1.4rem;
         margin-bottom: 10px;
         text-align: center;
+        color: #C6A667;
     }
 
     .categoria-home-descricao {
