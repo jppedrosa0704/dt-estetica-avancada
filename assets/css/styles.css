@@ -1270,7 +1270,7 @@ body {
     /* texto limitado para não estourar o card */
     .categoria-home-descricao {
         display: -webkit-box !important;
-        -webkit-line-clamp: 5 !important;
+        /* -webkit-line-clamp: 5 !important; */
         -webkit-box-orient: vertical !important;
         overflow: hidden !important;
     }
@@ -1290,7 +1290,7 @@ body {
         transition: transform 0.25s ease, box-shadow 0.25s ease !important;
         text-decoration: none !important;
 
-        width: auto !important;      /* remove largura 100% */
+        width: auto!important;      /* remove largura 100% */
         margin-top: auto !important; /* fixa no fundo */
         align-self: center !important; /* centraliza */
     }
@@ -1440,6 +1440,7 @@ body {
 
 .categoria-home-descricao {
     flex-grow: 1;
+    text-align: center;
 }
 
 .categoria-home-btn {
@@ -1459,7 +1460,7 @@ body {
 
     .categoria-home-img {
         height: 280px;
-        width: 100%;
+        width: 150%;
         object-fit: cover;
         border-radius: 16px;
         margin-bottom: 18px;
@@ -1476,7 +1477,7 @@ body {
         line-height: 1.5;
         text-align: center;
         display: -webkit-box;
-        -webkit-line-clamp: 5; /* limita o texto */
+        -webkit-line-clamp: 5; /*limita o texto */
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
