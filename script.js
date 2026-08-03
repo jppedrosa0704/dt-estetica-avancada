@@ -1,4 +1,6 @@
-// MENU MOBILE
+/* ============================
+  MENU MOBILE
+============================ */
 const toggle = document.querySelector('.menu-toggle');
 const menuMobile = document.querySelector('.menu-mobile');
 const mobileLinks = document.querySelectorAll('.menu-mobile a');
@@ -15,7 +17,9 @@ if (toggle && menuMobile) {
   });
 }
 
-// CATEGORIAS (Tratamentos)
+/* ============================
+  CATEGORIAS (Tratamentos)
+============================ */
 const categoriaToggles = document.querySelectorAll('.categoria-toggle');
 
 categoriaToggles.forEach(btn => {
@@ -23,19 +27,15 @@ categoriaToggles.forEach(btn => {
     const content = btn.parentElement.nextElementSibling;
     const aberta = content.classList.contains('aberta');
 
-    if (aberta) {
-      content.classList.remove('aberta');
-      btn.textContent = 'Ver serviços';
-      btn.dataset.aberto = "false";
-    } else {
-      content.classList.add('aberta');
-      btn.textContent = 'Fechar';
-      btn.dataset.aberto = "true";
-    }
+    content.classList.toggle('aberta');
+    btn.textContent = aberta ? 'Ver serviços' : 'Fechar';
+    btn.dataset.aberto = aberta ? "false" : "true";
   });
 });
 
-// CARDS (Tratamentos) — "VER MAIS" ↔ "FECHAR"
+/* ============================
+  CARDS (Tratamentos)
+============================ */
 const cardToggles = document.querySelectorAll('.card-toggle');
 
 cardToggles.forEach(btn => {
@@ -43,26 +43,21 @@ cardToggles.forEach(btn => {
     const content = btn.parentElement.nextElementSibling;
     const isOpen = content.style.display === 'block';
 
-    if (isOpen) {
-      content.style.display = 'none';
-      btn.textContent = 'Abrir';
-    } else {
-      content.style.display = 'block';
-      btn.textContent = 'Fechar';
-    }
+    content.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Abrir' : 'Fechar';
   });
 });
 
-// BOLINHAS DO SLIDER (Sobre)
+/* ============================
+  BOLINHAS DO SLIDER (Sobre)
+============================ */
 const fotos = document.querySelector('.sobre-fotos');
 const indicadores = document.querySelectorAll('.indicador');
 
 if (fotos && indicadores.length > 0) {
   fotos.addEventListener('scroll', () => {
     const largura = fotos.clientWidth;
-    const scroll = fotos.scrollLeft;
-
-    const index = Math.round(scroll / largura);
+    const index = Math.round(fotos.scrollLeft / largura);
 
     indicadores.forEach((bolinha, i) => {
       bolinha.classList.toggle('ativo', i === index);
@@ -73,13 +68,11 @@ if (fotos && indicadores.length > 0) {
 /* ============================
   SCROLL SUAVE PARA LINKS
 ============================ */
-
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
 
     const alvo = document.querySelector(this.getAttribute('href'));
-
     if (!alvo) return;
 
     const navHeight = window.innerWidth < 899 ? 65 : 85;
@@ -95,68 +88,67 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 /* ============================
   SCROLL SUAVE AO CARREGAR
 ============================ */
-
 window.addEventListener('load', () => {
-    const hash = window.location.hash;
+  const hash = window.location.hash;
+  if (!hash) return;
 
-    if (hash) {
-        const alvo = document.querySelector(hash);
+  const alvo = document.querySelector(hash);
+  if (!alvo) return;
 
-        if (alvo) {
-            const navHeight = window.innerWidth < 899 ? 65 : 85;
-            const posicao = alvo.offsetTop - navHeight;
+  const navHeight = window.innerWidth < 899 ? 65 : 85;
+  const posicao = alvo.offsetTop - navHeight;
 
-            window.scrollTo({
-                top: posicao,
-                behavior: 'smooth'
-            });
-        }
-    }
+  window.scrollTo({
+    top: posicao,
+    behavior: 'smooth'
+  });
 });
 
 /* ============================
   ABRIR AUTOMATICAMENTE A CATEGORIA PELO HASH (#)
 ============================ */
-
 window.addEventListener('load', () => {
-    const hash = window.location.hash.replace("#", "");
+  const hash = window.location.hash.replace("#", "");
+  if (!hash) return;
 
-    if (hash) {
-        const categoriaTitulo = document.querySelector(`h3[id="${hash}"]`);
+  const categoriaTitulo = document.querySelector(`h3[id="${hash}"]`);
+  if (!categoriaTitulo) return;
 
-        if (categoriaTitulo) {
-            const categoria = categoriaTitulo.closest(".categoria");
-            const content = categoria.querySelector(".categoria-content");
-            const btn = categoria.querySelector(".categoria-toggle");
+  const categoria = categoriaTitulo.closest(".categoria");
+  const content = categoria.querySelector(".categoria-content");
+  const btn = categoria.querySelector(".categoria-toggle");
 
-            // Abre automaticamente
-            content.classList.add("aberta");
-
-            // Atualiza o texto do botão
-            btn.textContent = "Fechar";
-
-            // Marca o botão como já aberto
-            btn.dataset.aberto = "true";
-        }
-    }
+  content.classList.add("aberta");
+  btn.textContent = "Fechar";
+  btn.dataset.aberto = "true";
 });
 
-/* ============================
-  BOLINHAS DO CARROSSEL (Categorias)
-============================ */
+/* ============================================================
+   BOLINHAS DA GALERIA MOBILE
+============================================================ */
+const galeria = document.querySelector('.mobile-gallery');
+const galeriaDots = document.querySelector('.galeria-indicadores');
 
-const categoriasCarousel = document.querySelector('.tratamentos-home-grid');
-const indicadoresTrat = document.querySelectorAll('.indicador-trat');
+if (galeria && galeriaDots) {
 
-if (categoriasCarousel && indicadoresTrat.length > 0) {
-  categoriasCarousel.addEventListener('scroll', () => {
-    const largura = categoriasCarousel.clientWidth;
-    const scroll = categoriasCarousel.scrollLeft;
+    const fotosMobile = galeria.querySelectorAll('.gallery-item').length;
 
-    const index = Math.round(scroll / largura);
+    galeriaDots.innerHTML = "";
 
-    indicadoresTrat.forEach((bolinha, i) => {
-      bolinha.classList.toggle('ativo', i === index);
+    for (let i = 0; i < fotosMobile; i++) {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("ativo");
+        galeriaDots.appendChild(dot);
+    }
+
+    const dots = galeriaDots.querySelectorAll("span");
+
+    galeria.addEventListener('scroll', () => {
+        const largura = galeria.clientWidth;
+        const index = Math.round(galeria.scrollLeft / largura);
+
+        dots.forEach((d, i) => {
+            d.classList.toggle('ativo', i === index);
+        });
     });
-  });
 }

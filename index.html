@@ -16,7 +16,7 @@
 
 <body>
 
-  <!-- HEADER CORRIGIDO -->
+  <!-- HEADER-->
   <header class="topbar">
     <a href="index.html" class="logo">
         <img src="./assets/img/logo-dt1.png" alt="Logo DT Estética Avançada">
@@ -101,6 +101,123 @@
       </div>
     </div>
   </section>
+
+  <!-- ==========================================================
+    PORQUE ESCOLHER A DT ESTÉTICA AVANÇADA
+=========================================================== -->
+  <section id="espaco" class="section section-light">
+
+    <h2 class="section-title">O Seu Lugar de Beleza Completa</h2>
+    <p class="section-text">
+      Um espaço moderno, acolhedor e pensado para oferecer conforto, elegância e bem-estar.
+      Aqui você encontra tratamentos de unhas, sobrancelhas, pestanas, estética facial e corporal — tudo num só lugar.
+    </p>
+
+        <!-- GALERIA MOBILE UNIFICADA -->
+    <div class="mobile-gallery">
+
+        <!-- 3 fotos principais -->
+      <div class="gallery-item">
+          <img src="./assets/img/fachada.jpeg" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+          <img src="./assets/img/manicure.jpeg" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+          <img src="./assets/img/sala-rosa.jpeg" class="gallery-photo">
+      </div>
+
+      <!-- 3 fotos extras -->
+      <div class="gallery-item">
+          <img src="./assets/img/sala-rosa2.jpeg" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+          <img src="./assets/img/sala-branca.jpeg" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+          <img src="./assets/img/sala-azul.jpeg" class="gallery-photo">
+      </div>
+
+    </div>
+
+    <!-- BOLINHAS DA GALERIA MOBILE -->
+    <div class="galeria-indicadores"></div>
+
+
+    <!-- ===== GALERIA PRINCIPAL (3 FOTOS) ===== -->
+    <div class="gallery-grid main-gallery">
+
+      <div class="gallery-item">
+        <img src="./assets/img/fachada.jpeg" alt="Fachada da Clínica" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./assets/img/manicure.jpeg" alt="Sala de Manicure" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./assets/img/sala-rosa.jpeg" alt="Sala Rosa" class="gallery-photo">
+      </div>
+
+    </div>
+
+    <!-- Botão -->
+    <div class="gallery-button-wrapper">
+      <button class="gallery-button" onclick="document.getElementById('extra-gallery').classList.toggle('show')">
+        Ver mais fotos
+      </button>
+    </div>
+
+    <!-- ===== GALERIA EXTRA (ESCONDIDA) ===== -->
+    <div id="extra-gallery" class="gallery-grid extra-gallery">
+
+      <div class="gallery-item">
+        <img src="./assets/img/sala-rosa2.jpeg" alt="Sala Rosa 2" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./assets/img/sala-branca.jpeg" alt="Sala Branca" class="gallery-photo">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./assets/img/sala-azul.jpeg" alt="Sala Azul" class="gallery-photo">
+      </div>
+
+    </div>
+
+    
+    <!-- BENEFÍCIOS -->
+    <div class="benefits-grid">
+
+      <div class="benefit-item">
+        <h3>Ambiente Completo</h3>
+        <p>Salas equipadas para estética facial, corporal, pestanas, sobrancelhas e unhas.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Conveniência Total</h3>
+        <p>Todos os serviços reunidos num único espaço moderno e acolhedor.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Profissionais Especializados</h3>
+        <p>Equipa qualificada em diferentes áreas da estética avançada.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Experiência Premium</h3>
+        <p>Ambiente elegante, atendimento personalizado e resultados visíveis.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
 
   <section id="tratamentos" class="section section-dark">
     <h2 class="section-title">Tratamentos</h2>
@@ -246,7 +363,7 @@
   </section>
 
 
-  <!-- ⭐ BLOCO IGUAL AO PRINT ⭐ -->
+  <!-- ⭐ BLOCO Reconhecimento ⭐ -->
   <div class="bloco-reconhecimento">
     
     <div class="reconhecimento-imagem">
@@ -291,11 +408,32 @@
     <br>
     <a href="https://www.fresha.com/p/dayanny-dutra-6292297?share=true&pId=2865997" class="btn-primary" target="_blank">Agendar Serviço</a>
     <br>
-    <div class="sobre-info">
-        <p><strong>📍 Endereço:</strong> Lgo de Soares dos Reis 38, 4400-309 — Vila Nova de Gaia</p>
-        <p><strong>📞 Contato:</strong> +351 912 529 900</p>
-        <p><strong>📧 Email:</strong> esteticaavancada.dt@gmail.com</p>
-      </div>
+  <div class="info-card">
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <span class="info-text">Lgo de Soares dos Reis 38, 4400-309 — Vila Nova de Gaia</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-icon">📞</span>
+      <span class="info-text">+351 912 529 900</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-icon">📧</span>
+      <span class="info-text">esteticaavancada.dt@gmail.com</span>
+    </div>
+
+    <div class="info-item highlight">
+      <span class="info-icon">⏰</span>
+      <span class="info-text">
+        <strong>Horário de funcionamento</strong><br>
+        Segunda a Sexta — 09h às 18h<br>
+        Sábado — 09h às 18h<br>
+        Domingo — Encerrado
+      </span>
+    </div>
+  </div>
   </section>
 
   <!-- FOOTER -->
