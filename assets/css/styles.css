@@ -1673,7 +1673,7 @@ body {
 }
 
 /* ============================================================
-   CARROSSEL MOBILE — GALERIA PRINCIPAL
+  CARROSSEL MOBILE — GALERIA PRINCIPAL
 ============================================================ */
 @media (max-width: 768px) {
 
@@ -1798,4 +1798,38 @@ body {
 .gallery-button-wrapper {
     text-align: center;
 }
+
+/* DESKTOP – lado a lado */
+.contact-map-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  width: 40%;
+}
+
+.map-area {
+  width: 60%;
+}
+
+/* MOBILE – tudo centralizado e mapa abaixo */
+@media (max-width: 768px) {
+  .contact-map-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info,
+  .map-area {
+    width: 100%;
+  }
+
+  .info-item {
+    justify-content: center;
+  }
+}
+
 
