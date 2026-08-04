@@ -1816,7 +1816,7 @@ body {
   width: 80%;
 }
 
-/* MOBILE – tudo centralizado e mapa abaixo */
+/* ANIMAÇÕES PARA MOBILE FADE-IN E SLIDE-UP*/
 @media (max-width: 768px) {
 
   .fade-in {
@@ -1841,5 +1841,27 @@ body {
     transform: translateY(0);
   }
 
+}
 
+/* ANIMAÇOES PARA DESKTOP FADE-IN E SLIDE-UP*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
