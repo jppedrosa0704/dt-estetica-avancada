@@ -152,3 +152,31 @@ if (galeria && galeriaDots) {
         });
     });
 }
+
+/* ============================
+  BOLINHAS DO SLIDER (Categorias Home)
+============================ */
+const categoriasCarousel = document.querySelector('.tratamentos-home-grid');
+const indicadoresTrat = document.querySelectorAll('.indicador-trat');
+
+if (categoriasCarousel && indicadoresTrat.length > 0) {
+
+  categoriasCarousel.addEventListener('scroll', () => {
+    const largura = categoriasCarousel.clientWidth;
+    const index = Math.round(categoriasCarousel.scrollLeft / largura);
+
+    indicadoresTrat.forEach((bolinha, i) => {
+      bolinha.classList.toggle('ativo', i === index);
+    });
+  });
+
+  indicadoresTrat.forEach((bolinha, i) => {
+    bolinha.addEventListener('click', () => {
+      const largura = categoriasCarousel.clientWidth;
+      categoriasCarousel.scrollTo({
+        left: largura * i,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
