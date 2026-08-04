@@ -928,11 +928,29 @@ body {
         border-radius: 10px !important;
     }
 
-    .sobre-foto-item {
-        min-width: 100% !important;
+    /* .sobre-foto-item {
+        width: 100% !important;
         flex: 0 0 100% !important;
         scroll-snap-align: center !important;
+    } */
+
+    .sobre-container {
+      padding: 40px 0 !important;   /* remove o padding lateral */
+      gap: 20px !important;         /* reduz o espaço entre elementos */
     }
+
+    .sobre-foto-item {
+      min-width: 100% !important;
+      flex: 0 0 100% !important;
+      overflow: hidden !important;
+    }
+
+    .sobre-foto-item img {
+      width: 100% !important;       /* agora ocupa toda a largura */
+      object-fit: cover !important;
+      border-radius: 16px !important;  /* opcional: remove borda arredondada para encostar na tela */
+    }
+  
 
     .sobre-indicadores {
         display: flex !important;
@@ -1865,3 +1883,5 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
