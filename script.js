@@ -180,3 +180,12 @@ if (categoriasCarousel && indicadoresTrat.length > 0) {
     });
   });
 }
+
+/* ============================
+  BOTÃO AGENDAR DOS CARDS SUB-CATEGORIA
+============================ */
+document.querySelectorAll('.btn-agendar').forEach(btn => {
+  btn.addEventListener('click', () => {
+    window.location.href = 'index.html#contato';
+  });
+});
