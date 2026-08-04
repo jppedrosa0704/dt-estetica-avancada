@@ -1818,19 +1818,28 @@ body {
 
 /* MOBILE – tudo centralizado e mapa abaixo */
 @media (max-width: 768px) {
-  .contact-map-container {
-    flex-direction: column;
-    text-align: center;
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
-  .contact-info,
-  .map-area {
-    width: 100%;
+  .fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .info-item {
-    justify-content: left;
+  .slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
   }
+
+  .slide-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
 }
-
-
