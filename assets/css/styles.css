@@ -1395,6 +1395,7 @@ body {
         padding: 12px 28px;
         font-size: 1rem;
     }
+
 }
 
 /* ===== GRID COMPACTO PARA DESKTOP ===== */
@@ -1926,4 +1927,49 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
+}
+
+/* Impede que animações criem overflow vertical */
+.fade-in,
+.slide-up {
+    overflow: hidden !important;
+}
+
+.sobre-section,
+.sobre-container {
+    overflow: hidden !important;
+}
+
+/* Remove APENAS a barra vertical do HTML (sem tocar na horizontal) */
+html {
+    overflow-y: auto !important;   /* mantém scroll vertical funcionando */
+}
+
+/* Esconde só a barra vertical */
+html::-webkit-scrollbar {
+    width: 0 !important;           /* remove a barra vertical */
+}
+
+html::-webkit-scrollbar-thumb {
+    background: transparent !important;
+}
+
+/* === FORÇA A BARRA HORIZONTAL NO SOBRE (DESKTOP + MOBILE) === */
+.sobre-fotos {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;      /* impede quebrar linha */
+    overflow-x: auto !important;       /* ativa scroll horizontal */
+    gap: 30px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Barra horizontal dourada */
+.sobre-fotos::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+.sobre-fotos::-webkit-scrollbar-thumb {
+    background: #C6A667 !important;
+    border-radius: 10px !important;
 }
