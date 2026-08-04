@@ -1860,6 +1860,10 @@ body {
     transform: translateY(0);
   }
 
+  .map-area {
+    width: 100% !important;
+  }
+
 }
 
 /* ANIMAÇOES PARA DESKTOP FADE-IN E SLIDE-UP*/
@@ -1884,5 +1888,3 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-
