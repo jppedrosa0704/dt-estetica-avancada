@@ -208,12 +208,18 @@ let pagina = 1;
 
 function trocarGaleria(direcao) {
   const galeria = document.getElementById('gallery-desktop');
+  const setaEsq = document.querySelector('.arrow-left');
+  const setaDir = document.querySelector('.arrow-right');
 
   if (direcao === 'next') pagina++;
   if (direcao === 'prev') pagina--;
 
   if (pagina < 1) pagina = 1;
   if (pagina > 2) pagina = 2;
+
+  // Oculta/mostra setas
+  setaEsq.style.display = pagina === 1 ? 'none' : 'flex';
+  setaDir.style.display = pagina === 2 ? 'none' : 'flex';
 
   if (pagina === 1) {
     galeria.innerHTML = `
@@ -231,42 +237,6 @@ function trocarGaleria(direcao) {
     `;
   }
 }
-
-/* ============================
-  SLIDER DESKTOP (GALERIA)
-============================ */
-// let pagina = 1;
-
-// function trocarGaleria(direcao) {
-//   const galeria = document.getElementById('gallery-desktop');
-
-//   if (direcao === 'next') pagina++;
-//   if (direcao === 'prev') pagina--;
-
-//   if (pagina < 1) pagina = 1;
-//   if (pagina > 3) pagina = 3;
-
-//   if (pagina === 1) {
-//     galeria.innerHTML = `
-//       <img src="./assets/img/fachada.jpeg" class="gallery-photo">
-//       <img src="./assets/img/manicure.jpeg" class="gallery-photo">
-//     `;
-//   }
-
-//   if (pagina === 2) {
-//     galeria.innerHTML = `
-//       <img src="./assets/img/sala-rosa.jpeg" class="gallery-photo">
-//       <img src="./assets/img/sala-rosa2.jpeg" class="gallery-photo">
-//     `;
-//   }
-
-//   if (pagina === 3) {
-//     galeria.innerHTML = `
-//       <img src="./assets/img/sala-branca.jpeg" class="gallery-photo">
-//       <img src="./assets/img/sala-azul.jpeg" class="gallery-photo">
-//     `;
-//   }
-// }
 
 /* animação das setas */
 document.querySelectorAll('.arrow').forEach(arrow => {
