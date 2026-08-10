@@ -213,6 +213,7 @@ body {
   color: #5A5A5A;
   font-size: 0.98rem;
   text-align: center;
+  word-spacing: 0.20rem;
 }
 
 /* CENTRALIZA O BOTÃO DA SEÇÃO TRATAMENTOS */
@@ -274,6 +275,10 @@ body {
 .sobre-section {
   padding: 80px 8%;
   background: #FFFFFF;
+}
+
+.sobre-section p {
+  word-spacing: 0.30rem;
 }
 
 .sobre-container {
@@ -1242,7 +1247,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.45;
     margin-bottom: 18px;
-
+    word-spacing: 0.2rem;
     /* CORREÇÃO — empurra o botão para baixo */
     flex-grow: 1;
 }
