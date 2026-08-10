@@ -1194,54 +1194,68 @@ body {
 .tratamentos-home-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px; /* menor */
+    gap: 28px;
     margin-top: 30px;
-    max-width: 1200px; /* garante que cabe na tela */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+
+    /* CORREÇÃO — garante que todos os cards tenham a mesma altura */
+    align-items: stretch;
 }
 
 /* ===== CARD COMPACTO ===== */
 .categoria-home {
     background: #F3E8D9;
-    padding: 26px 22px; /* menor */
+    padding: 26px 22px;
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-}
 
+    /* CORREÇÃO — card flexível e responsivo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
 /* ===== FOTO PADRONIZADA ===== */
 .categoria-home-img {
     width: 100%;
     max-width: 240px;
-    height: 350px; /* altura fixa para todas */
+    height: 350px;
     border-radius: 14px;
-    object-fit: cover; /* garante corte elegante sem distorcer */
+    object-fit: cover;
     margin: 0 auto 16px auto;
     display: block;
 }
 
-
 /* ===== TÍTULO MENOR ===== */
 .categoria-home-titulo {
-    font-size: 1.4rem; /* antes 1.8rem */
+    font-size: 1.4rem;
     margin-bottom: 10px;
     color: #C6A667;
 }
 
 /* ===== DESCRIÇÃO MENOR ===== */
 .categoria-home-descricao {
-    font-size: 0.9rem; /* antes 1rem */
+    font-size: 0.9rem;
     line-height: 1.45;
     margin-bottom: 18px;
+
+    /* CORREÇÃO — empurra o botão para baixo */
+    flex-grow: 1;
 }
 
 /* ===== BOTÃO MENOR ===== */
 .categoria-home-btn {
-    padding: 10px 20px; /* menor */
+    padding: 10px 20px;
     font-size: 0.85rem;
+
+    /* CORREÇÃO — garante que o botão nunca seja cortado */
+    margin-top: auto;
 }
+
 
 
 /* ============================
@@ -1468,6 +1482,38 @@ body {
 .categoria-home-btn {
     margin-top: auto;
 }
+
+/* ===== CORREÇÃO FINAL DO BOTÃO CORTADO ===== */
+@media (max-width: 1350px) and (min-width: 769px) {
+
+    /* grid vira 2 colunas */
+    .tratamentos-home-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 1000px !important;
+        gap: 36px !important;
+    }
+
+    /* imagem menor para evitar card gigante */
+    .categoria-home-img {
+        height: 300px !important;
+    }
+
+    /* card cresce conforme o conteúdo */
+    .categoria-home {
+        height: auto !important;
+    }
+
+    /* texto empurra o botão */
+    .categoria-home-descricao {
+        flex-grow: 1 !important;
+    }
+
+    /* botão nunca corta */
+    .categoria-home-btn {
+        margin-top: auto !important;
+    }
+}
+
 
 
 @media (max-width: 768px) {
@@ -1994,3 +2040,5 @@ body {
     display: none !important;
   }
 }
+
+
