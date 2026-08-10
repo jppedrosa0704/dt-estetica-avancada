@@ -1929,3 +1929,68 @@ body {
   }
 }
 
+.gallery-desktop-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.arrow {
+  background: #ffffff;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: #f0f0f0;
+}
+
+.gallery-grid {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.gallery-photo {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.arrow {
+  background: transparent;
+  border: 2px solid #C6A667;
+  padding: 10px 15px;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #C6A667;
+  transition: 0.3s;
+}
+
+.arrow.pulse {
+  animation: pulseArrow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseArrow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+
+
+/* ESCONDER GALERIA DESKTOP NO MOBILE */
+@media (max-width: 899px) {
+  .gallery-desktop-wrapper {
+    display: none !important;
+  }
+}

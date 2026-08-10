@@ -20,9 +20,7 @@ if (toggle && menuMobile) {
 /* ============================
   CATEGORIAS (Tratamentos)
 ============================ */
-const categoriaToggles = document.querySelectorAll('.categoria-toggle');
-
-categoriaToggles.forEach(btn => {
+document.querySelectorAll('.categoria-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.parentElement.nextElementSibling;
     const aberta = content.classList.contains('aberta');
@@ -36,9 +34,7 @@ categoriaToggles.forEach(btn => {
 /* ============================
   CARDS (Tratamentos)
 ============================ */
-const cardToggles = document.querySelectorAll('.card-toggle');
-
-cardToggles.forEach(btn => {
+document.querySelectorAll('.card-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.parentElement.nextElementSibling;
     const isOpen = content.style.display === 'block';
@@ -105,7 +101,7 @@ window.addEventListener('load', () => {
 });
 
 /* ============================
-  ABRIR AUTOMATICAMENTE A CATEGORIA PELO HASH (#)
+  ABRIR CATEGORIA PELO HASH
 ============================ */
 window.addEventListener('load', () => {
   const hash = window.location.hash.replace("#", "");
@@ -131,30 +127,30 @@ const galeriaDots = document.querySelector('.galeria-indicadores');
 
 if (galeria && galeriaDots) {
 
-    const fotosMobile = galeria.querySelectorAll('.gallery-item').length;
+  const fotosMobile = galeria.querySelectorAll('.gallery-item').length;
 
-    galeriaDots.innerHTML = "";
+  galeriaDots.innerHTML = "";
 
-    for (let i = 0; i < fotosMobile; i++) {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("ativo");
-        galeriaDots.appendChild(dot);
-    }
+  for (let i = 0; i < fotosMobile; i++) {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("ativo");
+    galeriaDots.appendChild(dot);
+  }
 
-    const dots = galeriaDots.querySelectorAll("span");
+  const dots = galeriaDots.querySelectorAll("span");
 
-    galeria.addEventListener('scroll', () => {
-        const largura = galeria.clientWidth;
-        const index = Math.round(galeria.scrollLeft / largura);
+  galeria.addEventListener('scroll', () => {
+    const largura = galeria.clientWidth;
+    const index = Math.round(galeria.scrollLeft / largura);
 
-        dots.forEach((d, i) => {
-            d.classList.toggle('ativo', i === index);
-        });
+    dots.forEach((d, i) => {
+      d.classList.toggle('ativo', i === index);
     });
+  });
 }
 
 /* ============================
-  BOLINHAS DO SLIDER (Categorias Home)
+  SLIDER CATEGORIAS HOME
 ============================ */
 const categoriasCarousel = document.querySelector('.tratamentos-home-grid');
 const indicadoresTrat = document.querySelectorAll('.indicador-trat');
@@ -182,7 +178,7 @@ if (categoriasCarousel && indicadoresTrat.length > 0) {
 }
 
 /* ============================
-  BOTÃO AGENDAR DOS CARDS SUB-CATEGORIA
+  BOTÃO AGENDAR
 ============================ */
 document.querySelectorAll('.btn-agendar').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -190,7 +186,9 @@ document.querySelectorAll('.btn-agendar').forEach(btn => {
   });
 });
 
-/* ANIMAÇÃO FADE-IN AO ROLAR */
+/* ============================
+  ANIMAÇÃO FADE-IN
+============================ */
 const fadeElements = document.querySelectorAll('.fade-in, .slide-up');
 
 const observer = new IntersectionObserver(entries => {
@@ -202,3 +200,39 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 fadeElements.forEach(el => observer.observe(el));
+
+/* ============================
+  SLIDER DESKTOP (GALERIA)
+============================ */
+let pagina = 1;
+
+function trocarGaleria(direcao) {
+  const galeria = document.getElementById('gallery-desktop');
+
+  if (direcao === 'next') pagina++;
+  if (direcao === 'prev') pagina--;
+
+  if (pagina < 1) pagina = 1;
+  if (pagina > 2) pagina = 2;
+
+  if (pagina === 1) {
+    galeria.innerHTML = `
+      <img src="./assets/img/fachada.jpeg" class="gallery-photo">
+      <img src="./assets/img/manicure.jpeg" class="gallery-photo">
+      <img src="./assets/img/sala-rosa.jpeg" class="gallery-photo">
+    `;
+  }
+
+  if (pagina === 2) {
+    galeria.innerHTML = `
+      <img src="./assets/img/sala-rosa2.jpeg" class="gallery-photo">
+      <img src="./assets/img/sala-branca.jpeg" class="gallery-photo">
+      <img src="./assets/img/sala-azul.jpeg" class="gallery-photo">
+    `;
+  }
+}
+
+
+document.querySelectorAll('.arrow').forEach(arrow => {
+  arrow.classList.add('pulse');
+});
